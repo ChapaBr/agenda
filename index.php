@@ -64,17 +64,9 @@
 						<div class="form-group">
 							<input type="text" class="form-control" id="input_office"aria-describedy="Entre com o Cargo" placeholder="Cargo">
 						</div>
-						<div class="form-group row">
-							<div class="dropdown">
-								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown_cell">Celular</button>
-							</div>
-							<div class="dropdown-menu">
-								<a class="dropdown-item enabled">Celular</a>
-								<a class="dropdown-item disabled">Comercial</a>
-								<a class="dropdown-item disabled">Residencial</a>
-								<a class="dropdown-item disabled">Principal</a>
-							</div>
-							<input type="text" class="form-control" id="input_tell" aria-describedby="Aria do Telefone" placeholder="Telefone">
+						<div class="form-group">
+							<input type="text" class="form-control" id="input_cell" aria-describedy="Entre com o Celular" placeholder="Celular">
+						</div>
 						</div>
 					</form>
 				</div>
@@ -82,7 +74,6 @@
 		</div>
 	</section>
 	<!-- Ending the Creating New Contact -->
-
 	<!-- JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
 	<!-- Bootstrap - JS -->
