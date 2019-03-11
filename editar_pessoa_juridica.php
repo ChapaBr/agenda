@@ -1,46 +1,37 @@
-<!-- Include Header -->
 <?php
-$success = isset($_GET['success']) ? $_GET['success'] : 0;
-$erro = isset($_GET['erro']) ? $_GET['erro'] : 0;
 include('layouts/header.php');
+include('controller/conn.php');
+$con = new conn();
+$link = $con -> conecta_mysql();
 ?>
 
-<!-- Content -->
 <section>
 	<div class="container form-box">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="form-title">Cadastrar Pessoa Jurídica</h2>
-				<?php
-					if ($success == 1) {
-						echo '<div class="alert alert-success text-center" role="alert"> 
-								<strong>CADASTRADO COM SUCESSO!</strong>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    								<span aria-hidden="true">&times;</span>
-  							  	</button>
-							  </div>';
-					} 
-					if ($erro == 1) {
-					 	echo '<div class="alert alert-danger text-center" role="alert"> 
-								<strong>ERRO AO CADASTRAS PESSOA</strong>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    								<span aria-hidden="true">&times;</span>
-  							  	</button>
-							  </div>';
-					 } 
-				?>
+				<h2 class="form-title">Editar Pessoa Jurídica</h2>
 			</div>
 		</div>
 		<div class="row">
+			<?php
+			$id = $_POST['returnId'];
+				$sql = "SELECT * FROM tb_pessoas_juridicas WHERE id = '$id'";
+				$resultado = mysqli_query($link, $sql);
+
+				while($pessoas = $resultado -> fetch_array(MYSQLI_ASSOC)){
+					$row_pessoa[] = $pessoas;
+				}
+				foreach ($row_pessoa as $item) {?>
 			<div class="col-lg-12">
-				<form method="post" action="controller/cadastrar.php">
+				<form method="post" action="controller/editar.php">
 				  <div class="row">
 				    <div class="col">
 				      <div class="input-group mb-3">
 						  <div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
 						  </div>
-						  <input type="text" class="form-control" placeholder="Nome Fantasia" aria-label="Username" aria-describedby="basic-addon1" name="inputNomeFantasia">
+						  <input type="text" class="form-control" placeholder="Nome Fantasia" aria-label="Username" aria-describedby="basic-addon1" name="inputNomeFantasia" value="<?php echo $item['nome_fantasia'];?>">
+						  <input type="hidden" name="returnId" value="<?php echo $item['id'];?>">
 						</div>
 				    </div>
 				    <div class="col">
@@ -48,7 +39,7 @@ include('layouts/header.php');
 						  <div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
 						  </div>
-						  <input type="text" class="form-control" placeholder="Razão Social" aria-label="Username" aria-describedby="basic-addon1" name="inputRazaoSocial">
+						  <input type="text" class="form-control" placeholder="Razão Social" aria-label="Username" aria-describedby="basic-addon1" name="inputRazaoSocial" value="<?php echo $item['razao_social'];?>">
 						</div>
 				    </div>
 				  </div>
@@ -58,7 +49,7 @@ include('layouts/header.php');
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-at"></i></span>
 						  	  </div>
-						  	  <input type="email" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" name="inputEmail">
+						  	  <input type="email" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" name="inputEmail" value="<?php echo $item['email'];?>">
 							</div>
 				    	</div>
 				    	<div class="col">
@@ -66,7 +57,7 @@ include('layouts/header.php');
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
 						  	  </div>
-						  	  <input type="text" class="form-control" placeholder="CNPJ" aria-label="Username" aria-describedby="basic-addon1" name="inputCnpj">
+						  	  <input type="text" class="form-control" placeholder="CNPJ" aria-label="Username" aria-describedby="basic-addon1" name="inputCnpj" value="<?php echo $item['cnpj'];?>">
 							</div>
 				    	</div>
 				  	</div>
@@ -76,7 +67,7 @@ include('layouts/header.php');
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-phone"></i></span>
 						  	  </div>
-						  	  <input type="text" class="form-control" placeholder="Telefone" aria-label="Username" aria-describedby="basic-addon1" name="inputTelefone">
+						  	  <input type="text" class="form-control" placeholder="Telefone" aria-label="Username" aria-describedby="basic-addon1" name="inputTelefone" value="<?php echo $item['telefone'];?>">
 							</div>
 				    	</div>
 				    	<div class="col">
@@ -84,7 +75,7 @@ include('layouts/header.php');
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-mobile-alt"></i></span>
 						  	  </div>
-						  	  <input type="text" class="form-control" placeholder="Celular" aria-label="Username" aria-describedby="basic-addon1" name="inputCelular">
+						  	  <input type="text" class="form-control" placeholder="Celular" aria-label="Username" aria-describedby="basic-addon1" name="inputCelular" value="<?php echo $item['celular'];?>">
 							</div>
 				    	</div>
 				  	</div>
@@ -94,7 +85,7 @@ include('layouts/header.php');
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
 						  	  </div>
-						  	  <input type="text" class="form-control" placeholder="CEP" aria-label="Username" aria-describedby="basic-addon1" name="inputCep">
+						  	  <input type="text" class="form-control" placeholder="CEP" aria-label="Username" aria-describedby="basic-addon1" name="inputCep" value="<?php echo $item['cep'];?>">
 							</div>
 				    	</div>
 				    	<div class="col">
@@ -139,7 +130,7 @@ include('layouts/header.php');
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
 						  	  </div>
-						  	  <input type="text" class="form-control" placeholder="Cidade" aria-label="Username" aria-describedby="basic-addon1" name="inputCidade">
+						  	  <input type="text" class="form-control" placeholder="Cidade" aria-label="Username" aria-describedby="basic-addon1" name="inputCidade" value="<?php echo $item['cidade'];?>">
 							</div>
 				    	</div>
 				  	</div>
@@ -149,7 +140,7 @@ include('layouts/header.php');
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
 						  	  </div>
-						  	  <input type="text" class="form-control" placeholder="Bairro" aria-label="Username" aria-describedby="basic-addon1" name="inputBairro">
+						  	  <input type="text" class="form-control" placeholder="Bairro" aria-label="Username" aria-describedby="basic-addon1" name="inputBairro" value="<?php echo $item['bairro'];?>">
 							</div>
 				    	</div>
 				    	<div class="col">	
@@ -157,7 +148,7 @@ include('layouts/header.php');
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-street-view"></i></span>
 						  	  </div>
-						  	  <input type="text" class="form-control" placeholder="Rua" aria-label="Username" aria-describedby="basic-addon1" name="inputRua">
+						  	  <input type="text" class="form-control" placeholder="Rua" aria-label="Username" aria-describedby="basic-addon1" name="inputRua" value="<?php echo $item['rua'];?>">
 							</div>
 				    	</div>
 				    	<div class="col">	
@@ -165,7 +156,7 @@ include('layouts/header.php');
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-sort-numeric-down"></i></span>
 						  	  </div>
-						  	  <input type="number" class="form-control" placeholder="Numero" aria-label="Username" aria-describedby="basic-addon1" name="inputNumero">
+						  	  <input type="number" class="form-control" placeholder="Numero" aria-label="Username" aria-describedby="basic-addon1" name="inputNumero" value="<?php echo $item['numero'];?>">
 							</div>
 				    	</div>
 				    	<div class="col">	
@@ -173,7 +164,7 @@ include('layouts/header.php');
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-street-view"></i></span>
 						  	  </div>
-						  	  <input type="text" class="form-control" placeholder="Complemento" aria-label="Username" aria-describedby="basic-addon1" name="inputComplemento">
+						  	  <input type="text" class="form-control" placeholder="Complemento" aria-label="Username" aria-describedby="basic-addon1" name="inputComplemento" value="<?php echo $item['complemento'];?>">
 							</div>
 				    	</div>
 				  	</div>
@@ -183,7 +174,7 @@ include('layouts/header.php');
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-calendar-alt"></i></span>
 						  	  </div>
-						  	  <input type="date" class="form-control" placeholder="Fundação" aria-label="Username" aria-describedby="basic-addon1" name="inputFundacao">
+						  	  <input type="date" class="form-control" placeholder="Fundação" aria-label="Username" aria-describedby="basic-addon1" name="inputFundacao" value="<?php echo $item['fundacao'];?>">
 							</div>
 				    	</div>
 				    	<div class="col">
@@ -191,7 +182,7 @@ include('layouts/header.php');
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-calendar-alt"></i></span>
 						  	  </div>
-						  	  <input type="text" class="form-control" placeholder="Setor" aria-label="Username" aria-describedby="basic-addon1" name="inputSetor">
+						  	  <input type="text" class="form-control" placeholder="Setor" aria-label="Username" aria-describedby="basic-addon1" name="inputSetor" value="<?php echo $item['setor'];?>">
 							</div>
 				    	</div>
 				  	</div>
@@ -201,18 +192,18 @@ include('layouts/header.php');
 				  				<div class="input-group-prepend">
 				  					<span class="input-group-text" id="basic-addon1"><i class="fas fa-check"></i></span>
 				  				</div>
-				  				<button class="btn btn-primary form-control" type="submit">Cadastrar</button>
+				  				<button class="btn btn-primary form-control" type="submit">Salvar</button>
 				  			</div>
 				  		</div>
 				  	</div>
 				</form>
 			</div>
+		<?php } ?>
 		</div>
 	</div>
 </section>
 <!-- Content -->
 
-<!-- Include Footer -->
 <?php
 include('layouts/footer.php');
 ?>

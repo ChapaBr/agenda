@@ -1,7 +1,6 @@
-<!-- Include DB -->
 <?php
 require('conn.php');
-
+$id = $_POST['returnId'];
 ## Recuperando Informações de Pessoas Físicas
 $nome = $_POST['inputNome'];
 $sobrenome = $_POST['inputSobrenome'];
@@ -22,7 +21,7 @@ $idade = $_POST['inputIdade'];
 ## Recuperando Informações de Pessoa Jurídicas
 $nome_fantasia = $_POST['inputNomeFantasia'];
 $razao_social = $_POST['inputRazaoSocial'];
-$email = $_POST['inputEmail'];
+$email = $_POST['inputEamil'];
 $cnpj = $_POST['inputCnpj'];
 $telefone = $_POST['inputTelefone'];
 $celular = $_POST['inputCelular'];
@@ -34,26 +33,25 @@ $rua = $_POST['inputRua'];
 $numero = $_POST['inputNumero'];
 $complemento = $_POST['inputComplemento'];
 $fundacao = $_POST['inputFundacao'];
-$setor = $_POST['inputSetor'];  
+$setor = $_POST['inputSetor'];
 
 $con = new conn();
 $link = $con -> conecta_mysql();
 
-
-if ($nome == '') {
-	$sql = "INSERT INTO tb_pessoas_juridicas (nome_fantasia, razao_social, email, cnpj, telefone, celular, cep, estado, cidade, bairro, rua, numero, complemento, fundacao, setor) VALUES ('$nome_fantasia', '$razao_social', '$email', '$cnpj', '$telefone', '$celular', '$cep', '$estado', '$cidade', '$bairro', '$rua', '$numero', '$complemento', '$fundacao', '$setor')";
+if ($nome != '') {
+	$sql = "UPDATE tb_pessoas_fisicas SET nome = '$nome', sobrenome = '$sobrenome', email = '$email', apelido = '$apelido', telfone = '$telefone', celular = '$celular', cep = '$cep', estado = '$estado', cidade = '$cidade', bairro = '$bairro', rua = '$rua', numero = '$numero', complemento = '$complemento', nascimento = '$nascimento', idade = '$idade' WHERE id = '$id'";
 	if (mysqli_query($link, $sql)) {
-		header('Location: ../pessoa_juridica.php?success=1');
+		header('Location: ../index.php?success-edit=1');
 	} else {
-		header('Location: ../pessoa_juridica.php?erro=1');
+		header('Location: ../index.php?erro-edit=1');
 	}
 } else {
-
-	$sql = "INSERT INTO tb_pessoas_fisicas (nome, sobrenome, email, apelido, telefone, celular, cep, estado, cidade, bairro, rua, numero, complemento, nascimento, idade) VALUES ('$nome', '$sobrenome', '$email', '$apelido', '$telefone', '$celular', '$cep', '$estado', '$cidade', '$bairro', '$rua', '$numero', '$complemento', '$nascimento', '$idade')";
+	$sql = "UPDATE tb_pessoas_juridicas SET nome_fantasia = '$nome_fantasia', razao_social = '$razao_social', email = '$email', cnpj = '$cnpj', telefone = '$telefone', celular = '$celular', cep = '$cep', estado = '$estado', cidade = '$cidade', bairro = '$bairro', rua = '$rua', numero = '$numero', complemento = '$complemento', fundacao = '$fundacao', setor = '$setor' WHERE id = '$id'";
 	if (mysqli_query($link, $sql)) {
-		header('Location: ../pessoa_fisica.php?success=1');
+		header('Location: ../index.php?success-edit=2');
 	} else {
-		header('Location: ../pessoa_fisica.php?erro=1');
+		header('Location: ../index.php?erro-edit=2');
 	}
 }
+
 ?>

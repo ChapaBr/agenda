@@ -1,4 +1,4 @@
-<!-- Start Footer -->
+<!-- Start Footer 
 <footer id="foot">
 	<div class="container">
 		<div class="row">
@@ -8,7 +8,7 @@
 		</div>
 	</div>
 </footer>
-<!-- End Footer -->
+ End Footer -->
 
 <!-- Start Java Script -->
 <script type="text/javascript" src="libs/jquery/jquery-3.3.1.min.js"></script>

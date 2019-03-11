@@ -14,6 +14,19 @@
 		        <button class="btn btn-link" data-toggle="collapse" data-target="#juridica-<?php echo $item['id'];?>" aria-expanded="false">
 			        <h3><?php echo $item['nome_fantasia'];?></h3>
 			    </button>
+			    <form method="post" action="controller/excluir.php">
+			    	<input type="hidden" name="returnId" value="<?php echo $item['id'];?>">
+			    	<input type="hidden" name="pessoa_juridica" value="true">
+			    	<button class="btn btn-danger btn-edit" type="submit">
+			    		Excluir
+			    	</button>
+			    </form>
+			    <form method="post" action="editar_pessoa_juridica.php">
+			    	<input type="hidden" name="returnId" value="<?php echo $item['id'];?>">
+			    	<button class="btn btn-info btn-edit" type="submit">
+			    		Editar
+			    	</button>
+				</form>
 		      </h2>
 		    </div>
 
