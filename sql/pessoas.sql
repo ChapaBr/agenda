@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 11-Mar-2019 às 04:28
+-- Generation Time: 11-Mar-2019 às 17:50
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -52,7 +52,7 @@ CREATE TABLE `tb_pessoas_fisicas` (
 --
 
 INSERT INTO `tb_pessoas_fisicas` (`id`, `nome`, `sobrenome`, `email`, `apelido`, `telefone`, `celular`, `cep`, `estado`, `cidade`, `bairro`, `rua`, `numero`, `complemento`, `nascimento`, `idade`) VALUES
-(1, 'Guilherme', 'Augusto', 'gui_2512@hotmail.com', 'Chapa', '11964458904', '11964458904', '09760600', 'SP', 'São Bernardo do Campo', 'Baeta Neves', 'Rua Sétimo Guazzelli', 169, 'Casa', '1999-12-25', 19);
+(16, 'Guilherme', 'Augusto', 'gui_2512@hotmail.com', 'Chapa', '11964458904', '11964458904', '09760600', 'SP', 'São Bernardo do Campo', 'Baeta Neves', 'Rua Sétimo Guazzelli', 169, 'Casa', '1999-12-25', 19);
 
 -- --------------------------------------------------------
 
@@ -80,6 +80,13 @@ CREATE TABLE `tb_pessoas_juridicas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Extraindo dados da tabela `tb_pessoas_juridicas`
+--
+
+INSERT INTO `tb_pessoas_juridicas` (`id`, `nome_fantasia`, `razao_social`, `email`, `cnpj`, `telefone`, `celular`, `cep`, `estado`, `cidade`, `bairro`, `rua`, `numero`, `complemento`, `fundacao`, `setor`) VALUES
+(13, 'Apple', 'Apple Inc', 'apple@teste.com', '1245487512', '000000000', '0000000000', '0000000', 'RJ', 'Jacarezinho', 'Bairro do Limão', 'Rua das Mandalas', 545, 'ap32B1', '1964-04-01', 'Tecnologia');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -103,13 +110,13 @@ ALTER TABLE `tb_pessoas_juridicas`
 -- AUTO_INCREMENT for table `tb_pessoas_fisicas`
 --
 ALTER TABLE `tb_pessoas_fisicas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tb_pessoas_juridicas`
 --
 ALTER TABLE `tb_pessoas_juridicas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

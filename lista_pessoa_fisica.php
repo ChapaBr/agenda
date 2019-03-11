@@ -1,5 +1,7 @@
 <div class="row">
 	<?php
+	error_reporting(E_WARNING);
+	ini_set("display_errors", 1);
 		$sql = "SELECT * FROM tb_pessoas_fisicas";
 		$resultado = mysqli_query($link, $sql);
 
@@ -15,17 +17,18 @@
           			<h3><?php echo $item['apelido'];?></h3>
 		        </button>
 		        <form method="post" action="controller/excluir.php">
+			    	<input type="hidden" name="returnId" value="<?php echo $item['id'];?>">
+			    	<input type="hidden" name="pessoa_fisica" value="true">
 			    	<button class="btn btn-danger btn-edit" type="submit">
-			    		<input type="hidden" name="returnId" value="<?php echo $item['id'];?>">
-			    		<input type="hidden" name="pessoa_fisica" value="true">
 			    		Excluir
 			    	</button>
 			    </form>
-			    <form method="post" action="#">
+			    <form method="post" action="editar_pessoa_fisica.php">
+			    	<input type="hidden" name="returnId" value="<?php echo $item['id'];?>">
 			    	<button class="btn btn-info btn-edit" type="submit">
-			    		<input type="hidden" name="<?php echo $item['id'];?>">
 			    		Editar
-			    </button>
+			    	</button>
+				</form>
 				</form>
 		      </h2>
 		    </div>

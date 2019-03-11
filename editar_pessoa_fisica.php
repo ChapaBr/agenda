@@ -9,13 +9,13 @@ $link = $con -> conecta_mysql();
 	<div class="container form-box">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="form-title">Editar Pessoa Jurídica</h2>
+				<h2 class="form-title">Editar Pessoa Fisica</h2>
 			</div>
 		</div>
 		<div class="row">
 			<?php
 			$id = $_POST['returnId'];
-				$sql = "SELECT * FROM tb_pessoas_juridicas WHERE id = '$id'";
+				$sql = "SELECT * FROM tb_pessoas_fisicas WHERE id = '$id'";
 				$resultado = mysqli_query($link, $sql);
 
 				while($pessoas = $resultado -> fetch_array(MYSQLI_ASSOC)){
@@ -30,9 +30,9 @@ $link = $con -> conecta_mysql();
 						  <div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
 						  </div>
-						  <input type="text" class="form-control" placeholder="Nome Fantasia" aria-label="Username" aria-describedby="basic-addon1" name="inputNomeFantasia" value="<?php echo $item['nome_fantasia'];?>">
+						  <input type="text" class="form-control" placeholder="Nome" aria-label="Username" aria-describedby="basic-addon1" name="inputNome" value="<?php echo $item['nome'];?>">
 						  <input type="hidden" name="returnId" value="<?php echo $item['id'];?>">
-						  <input type="hidden" name="pessoa_juridica" value="true">
+						  <input type="hidden" name="pessoa_fisica" value="true">
 						</div>
 				    </div>
 				    <div class="col">
@@ -40,7 +40,7 @@ $link = $con -> conecta_mysql();
 						  <div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
 						  </div>
-						  <input type="text" class="form-control" placeholder="Razão Social" aria-label="Username" aria-describedby="basic-addon1" name="inputRazaoSocial" value="<?php echo $item['razao_social'];?>">
+						  <input type="text" class="form-control" placeholder="Sobrenome" aria-label="Username" aria-describedby="basic-addon1" name="inputSobrenome" value="<?php echo $item['sobrenome'];?>">
 						</div>
 				    </div>
 				  </div>
@@ -58,7 +58,7 @@ $link = $con -> conecta_mysql();
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
 						  	  </div>
-						  	  <input type="text" class="form-control" placeholder="CNPJ" aria-label="Username" aria-describedby="basic-addon1" name="inputCnpj" value="<?php echo $item['cnpj'];?>">
+						  	  <input type="text" class="form-control" placeholder="Apelido" aria-label="Username" aria-describedby="basic-addon1" name="inputApelido" value="<?php echo $item['apelido'];?>">
 							</div>
 				    	</div>
 				  	</div>
@@ -175,7 +175,7 @@ $link = $con -> conecta_mysql();
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-calendar-alt"></i></span>
 						  	  </div>
-						  	  <input type="date" class="form-control" placeholder="Fundação" aria-label="Username" aria-describedby="basic-addon1" name="inputFundacao" value="<?php echo $item['fundacao'];?>">
+						  	  <input type="date" class="form-control" placeholder="Data de Nascimento" aria-label="Username" aria-describedby="basic-addon1" name="inputNascimento" value="<?php echo $item['nascimento'];?>">
 							</div>
 				    	</div>
 				    	<div class="col">
@@ -183,7 +183,7 @@ $link = $con -> conecta_mysql();
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-calendar-alt"></i></span>
 						  	  </div>
-						  	  <input type="text" class="form-control" placeholder="Setor" aria-label="Username" aria-describedby="basic-addon1" name="inputSetor" value="<?php echo $item['setor'];?>">
+						  	  <input type="text" class="form-control" placeholder="Idade" aria-label="Username" aria-describedby="basic-addon1" name="inputIdade" value="<?php echo $item['idade'];?>">
 							</div>
 				    	</div>
 				  	</div>

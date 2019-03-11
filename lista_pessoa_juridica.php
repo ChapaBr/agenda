@@ -1,5 +1,7 @@
 <div class="row">
 	<?php
+	error_reporting(E_WARNING);
+	ini_set("display_errors", 1);
 		$sql = "SELECT * FROM tb_pessoas_juridicas";
 		$resultado = mysqli_query($link, $sql);
 
