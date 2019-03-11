@@ -1,6 +1,6 @@
 <?php
 
-class db {
+class conn {
 	# Host
 	private $host = 'localhost';
 	# Usuario
@@ -8,7 +8,7 @@ class db {
 	# Senha
 	private $senha = '';
 	#Banco de dados
-	private $database = 'agenda';
+	private $database = 'pessoas';
 
 	public function conecta_mysql(){
 		$con = mysqli_connect ($this -> host, $this -> usuario, $this -> senha, $this -> database);

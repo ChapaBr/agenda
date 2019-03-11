@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700');
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+button,
+input,
+textarea,
+span,
+a {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 400;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	border: none;
+	background-color: #fff;
+}
+
+p {
+	color: #000;
+	font-size: 14px;
+	font-weight: 400;
+	text-align: justify;
+}
+
+nav {
+	border-bottom: 1px solid #000;
+	margin-bottom: 80px;
+}
+
+nav a.navbar-brand {
+	font-size: 50px;
+	margin-left: 50px;
+	padding: 0;
+}
+
+section {
+	height: 100vh;
+}
+
+div.form-box {
+	border: 1px solid #000;
+	border-radius: 7px;
+	padding: 20px;
+}
+
+div.form-box h2.form-title {
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	padding-bottom: 15px; 
+	font-weight: 700;
+}
+
+div.form-box input.form-control,
+div.form-box select.custom-select {
+	border: 1px solid #000;
+	border-radius: 7px;
+	color: #525252;
+}
