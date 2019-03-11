@@ -40,17 +40,13 @@ nav a.navbar-brand {
 	padding: 0;
 }
 
-section {
-	height: 100vh;
-}
-
 div.form-box {
 	border: 1px solid #000;
 	border-radius: 7px;
 	padding: 20px;
 }
 
-div.form-box h2.form-title {
+h2.title {
 	text-decoration: none;
 	text-transform: uppercase;
 	text-align: center;

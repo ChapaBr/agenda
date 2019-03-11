@@ -33,7 +33,7 @@ include('layouts/header.php');
 		</div>
 		<div class="row">
 			<div class="col-lg-12">
-				<form method="post" action="controller/cadastrar_pessoa_fisica.php">
+				<form method="post" action="controller/cadastrar.php">
 				  <div class="row">
 				    <div class="col">
 				      <div class="input-group mb-3">
