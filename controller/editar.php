@@ -23,7 +23,7 @@ $idade = $_POST['inputIdade'];
 ## Recuperando Informações de Pessoa Jurídicas
 $nome_fantasia = $_POST['inputNomeFantasia'];
 $razao_social = $_POST['inputRazaoSocial'];
-$email = $_POST['inputEamil'];
+$email = $_POST['inputEmail'];
 $cnpj = $_POST['inputCnpj'];
 $telefone = $_POST['inputTelefone'];
 $celular = $_POST['inputCelular'];

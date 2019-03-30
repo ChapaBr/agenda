@@ -9,7 +9,7 @@ $link = $con -> conecta_mysql();
 	<div class="container form-box">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="form-title">Editar Pessoa Fisica</h2>
+				<h2 class="form-title text-center">Editar Pessoa Fisica</h2>
 			</div>
 		</div>
 		<div class="row">
@@ -68,7 +68,7 @@ $link = $con -> conecta_mysql();
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-phone"></i></span>
 						  	  </div>
-						  	  <input type="text" class="form-control" placeholder="Telefone" aria-label="Username" aria-describedby="basic-addon1" name="inputTelefone" value="<?php echo $item['telefone'];?>">
+						  	  <input type="text" class="form-control phone_with_ddd" placeholder="Telefone" aria-label="Username" aria-describedby="basic-addon1" name="inputTelefone" value="<?php echo $item['telefone'];?>">
 							</div>
 				    	</div>
 				    	<div class="col">
@@ -76,7 +76,7 @@ $link = $con -> conecta_mysql();
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-mobile-alt"></i></span>
 						  	  </div>
-						  	  <input type="text" class="form-control" placeholder="Celular" aria-label="Username" aria-describedby="basic-addon1" name="inputCelular" value="<?php echo $item['celular'];?>">
+						  	  <input type="text" class="form-control cell_with_ddd" placeholder="Celular" aria-label="Username" aria-describedby="basic-addon1" name="inputCelular" value="<?php echo $item['celular'];?>">
 							</div>
 				    	</div>
 				  	</div>
@@ -86,7 +86,7 @@ $link = $con -> conecta_mysql();
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
 						  	  </div>
-						  	  <input type="text" class="form-control" placeholder="CEP" aria-label="Username" aria-describedby="basic-addon1" name="inputCep" value="<?php echo $item['cep'];?>">
+						  	  <input type="text" class="form-control cep" placeholder="CEP" aria-label="Username" aria-describedby="basic-addon1" name="inputCep" value="<?php echo $item['cep'];?>">
 							</div>
 				    	</div>
 				    	<div class="col">
@@ -95,7 +95,7 @@ $link = $con -> conecta_mysql();
 							    <span class="input-group-text" for="inputGroupSelect02" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
 							  </div>
 							  <select class="custom-select" id="inputGroupSelect02" name="inputEstado">
-							    <option selected>Estado</option>
+							    <option selected><?php echo $item['estado']; ?></option>
 							    <option value="AC">AC</option>
 							    <option value="AL">AL</option>
 							    <option value="AP">AP</option>
@@ -175,7 +175,7 @@ $link = $con -> conecta_mysql();
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-calendar-alt"></i></span>
 						  	  </div>
-						  	  <input type="date" class="form-control" placeholder="Data de Nascimento" aria-label="Username" aria-describedby="basic-addon1" name="inputNascimento" value="<?php echo $item['nascimento'];?>">
+						  	  <input type="text" class="form-control date" placeholder="Data de Nascimento" aria-label="Username" aria-describedby="basic-addon1" name="inputNascimento" value="<?php echo $item['nascimento'];?>">
 							</div>
 				    	</div>
 				    	<div class="col">

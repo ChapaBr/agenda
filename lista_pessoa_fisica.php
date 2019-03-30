@@ -29,7 +29,6 @@
 			    		Editar
 			    	</button>
 				</form>
-				</form>
 		      </h2>
 		    </div>
 

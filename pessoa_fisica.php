@@ -10,7 +10,7 @@ include('layouts/header.php');
 	<div class="container form-box">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="form-title">Cadastrar Pessoa Física</h2>
+				<h2 class="form-title text-center">Cadastrar Pessoa Física</h2>
 				<?php
 					if ($success == 1) {
 						echo '<div class="alert alert-success text-center" role="alert"> 
@@ -76,7 +76,7 @@ include('layouts/header.php');
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-phone"></i></span>
 						  	  </div>
-						  	  <input type="text" class="form-control" placeholder="Telefone" aria-label="Username" aria-describedby="basic-addon1" name="inputTelefone">
+						  	  <input type="text" class="form-control phone_with_ddd" placeholder="Telefone" aria-label="Username" aria-describedby="basic-addon1" name="inputTelefone">
 							</div>
 				    	</div>
 				    	<div class="col">
@@ -84,7 +84,7 @@ include('layouts/header.php');
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-mobile-alt"></i></span>
 						  	  </div>
-						  	  <input type="text" class="form-control" placeholder="Celular" aria-label="Username" aria-describedby="basic-addon1" name="inputCelular">
+						  	  <input type="text" class="form-control cell_with_ddd" placeholder="Celular" aria-label="Username" aria-describedby="basic-addon1" name="inputCelular">
 							</div>
 				    	</div>
 				  	</div>
@@ -94,7 +94,7 @@ include('layouts/header.php');
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
 						  	  </div>
-						  	  <input type="text" class="form-control" placeholder="CEP" aria-label="Username" aria-describedby="basic-addon1" name="inputCep">
+						  	  <input type="text" class="form-control cep" placeholder="CEP" aria-label="Username" aria-describedby="basic-addon1" name="inputCep">
 							</div>
 				    	</div>
 				    	<div class="col">
@@ -183,7 +183,7 @@ include('layouts/header.php');
 						  	  <div class="input-group-prepend">
 						    	<span class="input-group-text" id="basic-addon1"><i class="fas fa-calendar-alt"></i></span>
 						  	  </div>
-						  	  <input type="date" class="form-control" placeholder="Data de Nascimento" aria-label="Username" aria-describedby="basic-addon1" name="inputNascimento">
+						  	  <input type="text" class="form-control date" placeholder="Data de Nascimento" aria-label="Username" aria-describedby="basic-addon1" name="inputNascimento">
 							</div>
 				    	</div>
 				    	<div class="col">
